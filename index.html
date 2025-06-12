@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Heart's Confession 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffcce6, #ffb3d9, #ff99cc, #ff80bf);
+      font-family: 'Montserrat', sans-serif;
+      color: #4a2c40;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(214, 51, 132, 0.3);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5em;
+      color: #d63384;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      animation: pulse 2s infinite alternate;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin: 20px 0;
+      text-align: left;
+      padding: 0 20px;
+    }
+
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8em;
+      color: #d63384;
+      margin-top: 30px;
+      text-align: right;
+    }
+
+    .recipient {
+      font-weight: bold;
+      color: #d63384;
+      font-size: 1.3em;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #d63384, transparent);
+      width: 70%;
+      margin: 40px auto;
+    }
+
+    img {
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(214, 51, 132, 0.4);
+      margin: 30px auto;
+      max-width: 80%;
+      transition: transform 0.5s ease;
+      border: 5px solid white;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+    }
+
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d88;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart:before, .heart:after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4d88;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+
+    .heart:nth-child(3n+1) {
+      background: #ff80b3;
+    }
+    .heart:nth-child(3n+2) {
+      background: #ff66a3;
+    }
+    .heart:nth-child(3n+3) {
+      background: #ff4d88;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg) scale(0.5);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.7;
+      }
+      80% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(45deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      100% {
+        transform: scale(1.05);
+        text-shadow: 4px 4px 8px rgba(214, 51, 132, 0.3);
+      }
+    }
+
+    .rose-petals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .petal {
+      position: absolute;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff4d88" d="M50,0 C60,20 80,30 80,50 C80,70 60,80 50,100 C40,80 20,70 20,50 C20,30 40,20 50,0 Z"/></svg>') no-repeat;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+      opacity: 0.8;
+      animation: falling linear infinite;
+    }
+
+    @keyframes falling {
+      0% {
+        transform: translate(0, -10%) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translate(calc(var(--random-x) * 100px), 100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .hint {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+      border: 1px dashed #d63384;
+      font-style: italic;
+    }
+
+    .glow {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4d88, 0 0 20px #ff4d88;
+      }
+      to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4d88, 0 0 40px #ff4d88;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rose-petals" id="petals"></div>
+  <div class="floating-hearts" id="hearts"></div>
+
+  <div class="container">
+    <h1>💖 My Heart's Confession</h1>
+
+    <p class="recipient">To: Touhida Sultana Teatly (S-6)</p>
+    
+    <p>From the moment I first saw you on campus, your smile has been the brightest light in my world. It's like the sun breaking through clouds after endless rain.</p>
+    
+    <p>Every day, I've wanted to walk up to you, to hear your voice, to share a laugh... but my introverted heart kept me at a distance. Even when I gathered the courage in our second year, cruel rumors made me retreat into silence.</p>
+    
+    <p>You're everything I admire - hardworking, joyful, and your laughter is the most beautiful melody. Watching you with friends, I often find myself smiling without realizing, lost in the happiness you radiate.</p>
+
+    <hr>
+
+    <p>This digital love letter is my leap of faith - my way of finally letting you know how you've made my heart feel all this time.</p>
+
+    <img src="https://i.ibb.co/4R7c0PRH/20250613-005551.png" alt="crush" border="0">
+
+    <p>I know exams are approaching, and your studies come first. But when the semester ends, if you'd allow me, I'd love nothing more than to sit with you over coffee and finally say all this in person.</p>
+    
+    <p class="signature">With hope in my heart,</p>
+    <p class="signature">Hasan</p>
+
+    <div class="hint glow">
+      <strong>Hint:</strong> I'm the tall one (6'0") who's been stealing glances at you for two years.
+    </div>
+  </div>
+
+  <script>
+    // Create floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      heart.style.setProperty('--random-x', Math.random() * 2 - 1);
+      document.getElementById("hearts").appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    // Create falling petals
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.className = "petal";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.setProperty('--random-x', Math.random() * 2 - 1);
+      petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      petal.style.opacity = Math.random() * 0.5 + 0.3;
+      petal.style.width = (Math.random() * 20 + 15) + "px";
+      petal.style.height = petal.style.width;
+      document.getElementById("petals").appendChild(petal);
+      setTimeout(() => petal.remove(), 10000);
+    }
+
+    setInterval(createHeart, 300);
+    setInterval(createPetal, 500);
+
+    // Add initial petals
+    for (let i = 0; i < 20; i++) {
+      setTimeout(createPetal, i * 200);
+    }
+  </script>
+
+</body>
+</html>
