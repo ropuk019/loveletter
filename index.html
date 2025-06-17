@@ -1,299 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Heart's Confession 💖</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(135deg, #ffcce6, #ffb3d9, #ff99cc, #ff80bf);
-      font-family: 'Montserrat', sans-serif;
-      color: #4a2c40;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-      animation: fadeIn 2s ease-in;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get FREE MrBeast Feastibles Chocolate Box!</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(214, 51, 132, 0.3);
-      position: relative;
-      z-index: 1;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
+.header-banner {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
+}
 
-    h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 3.5em;
-      color: #d63384;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      animation: pulse 2s infinite alternate;
-    }
+.header-banner img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
 
-    p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      margin: 20px 0;
-      text-align: left;
-      padding: 0 20px;
-    }
+.header-banner p {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  color: #333;
+}
 
-    .signature {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.8em;
-      color: #d63384;
-      margin-top: 30px;
-      text-align: right;
-    }
+.cta-button {
+  background-color: #ff7f50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-    .recipient {
-      font-weight: bold;
-      color: #d63384;
-      font-size: 1.3em;
-      text-align: center;
-      margin-bottom: 30px;
-    }
+.cta-button:hover {
+  background-color: #ff5c2d;
+}
 
-    hr {
-      border: none;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #d63384, transparent);
-      width: 70%;
-      margin: 40px auto;
-    }
-
-    img {
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(214, 51, 132, 0.4);
-      margin: 30px auto;
-      max-width: 80%;
-      transition: transform 0.5s ease;
-      border: 5px solid white;
-    }
-
-    img:hover {
-      transform: scale(1.03);
-    }
-
-    .floating-hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .heart {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff4d88;
-      transform: rotate(45deg);
-      animation: float 6s linear infinite;
-      opacity: 0.7;
-    }
-
-    .heart:before, .heart:after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: #ff4d88;
-      border-radius: 50%;
-    }
-
-    .heart:before {
-      top: -10px;
-      left: 0;
-    }
-
-    .heart:after {
-      left: -10px;
-      top: 0;
-    }
-
-    .heart:nth-child(3n+1) {
-      background: #ff80b3;
-    }
-    .heart:nth-child(3n+2) {
-      background: #ff66a3;
-    }
-    .heart:nth-child(3n+3) {
-      background: #ff4d88;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(45deg) scale(0.5);
-        opacity: 0;
-      }
-      20% {
-        opacity: 0.7;
-      }
-      80% {
-        opacity: 0.7;
-      }
-      100% {
-        transform: translateY(-20vh) rotate(45deg) scale(1.2);
-        opacity: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      }
-      100% {
-        transform: scale(1.05);
-        text-shadow: 4px 4px 8px rgba(214, 51, 132, 0.3);
-      }
-    }
-
-    .rose-petals {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .petal {
-      position: absolute;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff4d88" d="M50,0 C60,20 80,30 80,50 C80,70 60,80 50,100 C40,80 20,70 20,50 C20,30 40,20 50,0 Z"/></svg>') no-repeat;
-      background-size: contain;
-      width: 30px;
-      height: 30px;
-      opacity: 0.8;
-      animation: falling linear infinite;
-    }
-
-    @keyframes falling {
-      0% {
-        transform: translate(0, -10%) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.8;
-      }
-      90% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translate(calc(var(--random-x) * 100px), 100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .hint {
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 15px;
-      border-radius: 10px;
-      display: inline-block;
-      margin-top: 20px;
-      border: 1px dashed #d63384;
-      font-style: italic;
-    }
-
-    .glow {
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4d88, 0 0 20px #ff4d88;
-      }
-      to {
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4d88, 0 0 40px #ff4d88;
-      }
-    }
-  </style>
+        
+        /* Header Banner */
+        .header-banner {
+            background: linear-gradient(135deg, #ff5e00, #ff1c1c);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(255, 30, 30, 0.3);
+        }
+        
+        .header-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            background-color: #fff;
+            color: #ff1c1c;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Email Form Section */
+        .email-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .email-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff1c1c;
+        }
+        
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .email-input {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        /* Referral Section */
+        .referral-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        
+        .progress-container {
+            margin: 20px 0;
+        }
+        
+        .progress-bar {
+            height: 30px;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #ff5e00, #ff1c1c);
+            width: 0%;
+            transition: width 0.5s;
+        }
+        
+        .progress-text {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .referral-link {
+            display: flex;
+            margin: 20px 0;
+        }
+        
+        .referral-link input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .copy-button {
+            padding: 10px 15px;
+            background-color: #ff1c1c;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .share-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .whatsapp {
+            background-color: #25D366;
+        }
+        
+        .facebook {
+            background-color: #4267B2;
+        }
+        
+        .messenger {
+            background-color: #006AFF;
+        }
+        
+        /* Claim Section */
+        .claim-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+        
+        .claim-section h2 {
+            color: #ff1c1c;
+            margin-bottom: 20px;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comments-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff1c1c;
+        }
+        
+        .comment {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comment:last-child {
+            border-bottom: none;
+        }
+        
+        .comment-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ff1c1c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .comment-content {
+            flex: 1;
+        }
+        
+        .comment-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .comment-text {
+            margin-bottom: 5px;
+        }
+        
+        .comment-time {
+            color: #999;
+            font-size: 0.8rem;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Ad Containers */
+        .ad-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            text-align: center;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: #999;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header-banner h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-banner p {
+                font-size: 1rem;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <div class="rose-petals" id="petals"></div>
-  <div class="floating-hearts" id="hearts"></div>
-
-  <div class="container">
-    <h1>💖 My Heart's Confession</h1>
-
-    <p class="recipient">To: Touhida Sultana Teatly (S-6)</p>
-    
-    <p>From the moment I first saw you on campus, your smile has been the brightest light in my world. It's like the sun breaking through clouds after endless rain.</p>
-    
-    <p>Every day, I've wanted to walk up to you, to hear your voice, to share a laugh... but my introverted heart kept me at a distance. Even when I gathered the courage in our second year, cruel rumors made me retreat into silence.</p>
-    
-    <p>You're everything I admire - hardworking, joyful, and your laughter is the most beautiful melody. Watching you with friends, I often find myself smiling without realizing, lost in the happiness you radiate.</p>
-
-    <hr>
-
-    <p>This digital love letter is my leap of faith - my way of finally letting you know how you've made my heart feel all this time.</p>
-
-    <img src="https://i.ibb.co/4R7c0PRH/20250613-005551.png" alt="crush" border="0">
-
-    <p>I know exams are approaching, and your studies come first. But when the semester ends, if you'd allow me, I'd love nothing more than to sit with you over coffee and finally say all this in person.</p>
-    
-    <p class="signature">With hope in my heart,</p>
-    <p class="signature">Hasan</p>
-
-    <div class="hint glow">
-      <strong>Hint:</strong> I'm the tall one (6'0") who's been stealing glances at you for two years.
+    <div class="container">
+        <!-- Header Banner -->
+        <div class="header-banner">
+        <img src="https://i.ibb.co/DfhWCc0n/1750050637581-Photo-Grid.png" alt="1750050637581-Photo-Grid" border="0">
+            <p>Claim your taste of greatness, just by inviting 20 friends!</p>
+            <button class="cta-button" id="scrollToForm">Get Started Now</button>
+        </div>
+        
+        <!-- Top Ad -->
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-container" id="top-ad">
+            <!-- Ad code will be inserted here -->
+            <script>
+                // Sample ad code - replace with your actual ad code
+                document.getElementById('top-ad').innerHTML = '<a href="https://example.com"><img src="https://via.placeholder.com/728x90" alt="Ad"></a>';
+            </script>
+        </div>
+        
+        <!-- Email Form Section -->
+        <div class="email-section" id="emailSection">
+            <h2>Enter your email to start:</h2>
+            <form class="email-form" id="emailForm">
+                <input type="email" class="email-input" id="userEmail" placeholder="Your email address" required>
+                <button type="submit" class="cta-button">Start Now</button>
+            </form>
+        </div>
+        
+        <!-- Middle Ad -->
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-container" id="middle-ad">
+            <!-- Ad code will be inserted here -->
+            <script>
+                // Sample ad code - replace with your actual ad code
+                document.getElementById('middle-ad').innerHTML = '<a href="https://example.com"><img src="https://via.placeholder.com/728x90" alt="Ad"></a>';
+            </script>
+        </div>
+        
+        <!-- Referral Section -->
+        <div class="referral-section" id="referralSection">
+            <h2>Invite friends to get your free Feastibles box!</h2>
+            <p>Share your unique link with friends. When 20 friends join, you'll unlock your free box!</p>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <div class="progress-text" id="progressText">0/20 friends joined</div>
+            </div>
+            
+            <p>Your Unique Invite Link:</p>
+            <div class="referral-link">
+                <input type="text" id="referralLink" readonly>
+                <button class="copy-button" id="copyButton">Copy</button>
+            </div>
+            
+            <p>Share with friends:</p>
+            <div class="share-buttons">
+                <button class="share-button whatsapp" id="whatsappShare">
+                    <span>WhatsApp</span>
+                </button>
+                <button class="share-button facebook" id="facebookShare">
+                    <span>Facebook</span>
+                </button>
+                <button class="share-button messenger" id="messengerShare">
+                    <span>Messenger</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Claim Section -->
+        <div class="claim-section" id="claimSection">
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p>You've successfully invited 20 friends! Now claim your FREE Feastibles chocolate box!</p>
+            <button class="cta-button" id="claimButton">Claim Your Free Feastible Now</button>
+        </div>
+        
+        <!-- Bottom Ad -->
+        <div class="ad-label">Advertisement</div>
+        <div class="ad-container" id="bottom-ad">
+            <!-- Ad code will be inserted here -->
+            <script>
+                // Sample ad code - replace with your actual ad code
+                document.getElementById('bottom-ad').innerHTML = '<a href="https://example.com"><img src="https://via.placeholder.com/728x90" alt="Ad"></a>';
+            </script>
+        </div>
+        
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <h2>What people are saying</h2>
+            
+            <div class="comment">
+                <div class="comment-avatar">R</div>
+                <div class="comment-content">
+                    <div class="comment-name">Rafi</div>
+                    <div class="comment-text">🥳 Omg! I got my free box, this is insane 🔥</div>
+                    <div class="comment-time">2 minutes ago</div>
+                </div>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-avatar">S</div>
+                <div class="comment-content">
+                    <div class="comment-name">Sarah</div>
+                    <div class="comment-text">🍫 Can't believe it worked! Invited 21 friends 😍</div>
+                    <div class="comment-time">15 minutes ago</div>
+                </div>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-avatar">A</div>
+                <div class="comment-content">
+                    <div class="comment-name">Arif</div>
+                    <div class="comment-text">👀 18 so far... almost there</div>
+                    <div class="comment-time">25 minutes ago</div>
+                </div>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-avatar">N</div>
+                <div class="comment-content">
+                    <div class="comment-name">Nusrat</div>
+                    <div class="comment-text">🎁 This chocolate is 🔥🔥🔥</div>
+                    <div class="comment-time">1 hour ago</div>
+                </div>
+            </div>
+            
+            <div class="comment">
+                <div class="comment-avatar">S</div>
+                <div class="comment-content">
+                    <div class="comment-name">Shuvo</div>
+                    <div class="comment-text">💌 MrBeast you rock!!!</div>
+                    <div class="comment-time">2 hours ago</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>sign up and take the free chocolate.</p>
+        </div>
     </div>
-  </div>
-
-  <script>
-    // Create floating hearts
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-      heart.style.setProperty('--random-x', Math.random() * 2 - 1);
-      document.getElementById("hearts").appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }
-
-    // Create falling petals
-    function createPetal() {
-      const petal = document.createElement("div");
-      petal.className = "petal";
-      petal.style.left = Math.random() * 100 + "vw";
-      petal.style.setProperty('--random-x', Math.random() * 2 - 1);
-      petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
-      petal.style.opacity = Math.random() * 0.5 + 0.3;
-      petal.style.width = (Math.random() * 20 + 15) + "px";
-      petal.style.height = petal.style.width;
-      document.getElementById("petals").appendChild(petal);
-      setTimeout(() => petal.remove(), 10000);
-    }
-
-    setInterval(createHeart, 300);
-    setInterval(createPetal, 500);
-
-    // Add initial petals
-    for (let i = 0; i < 20; i++) {
-      setTimeout(createPetal, i * 200);
-    }
-  </script>
-
+    
+    <script>
+        // Basic functionality for the landing page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Scroll to form
+            document.getElementById('scrollToForm').addEventListener('click', function() {
+                document.getElementById('emailSection').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Email form submission
+            document.getElementById('emailForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('userEmail').value;
+                
+                // In a real implementation, you would save the email to your database
+                console.log('Email submitted:', email);
+                
+                // Generate a referral link (in a real app, this would be unique per user)
+                const referralCode = generateReferralCode();
+                const referralLink = window.location.href.split('?')[0] + '?ref=' + referralCode;
+                
+                // Show referral section
+                document.getElementById('emailSection').style.display = 'none';
+                document.getElementById('referralSection').style.display = 'block';
+                document.getElementById('referralLink').value = referralLink;
+                
+                // Start with 0 referrals
+                updateProgress(0);
+            });
+            
+            // Copy referral link
+            document.getElementById('copyButton').addEventListener('click', function() {
+                const referralLink = document.getElementById('referralLink');
+                referralLink.select();
+                document.execCommand('copy');
+                
+                // Change button text temporarily
+                const button = document.getElementById('copyButton');
+                button.textContent = 'Copied!';
+                setTimeout(function() {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+            
+            // Share buttons (basic implementation)
+            document.getElementById('whatsappShare').addEventListener('click', function() {
+                const link = document.getElementById('referralLink').value;
+                window.open('https://wa.me/?text=' + encodeURIComponent(`Get your FREE MrBeast Feastibles chocolate box! ${link}`));
+            });
+            
+            document.getElementById('facebookShare').addEventListener('click', function() {
+                const link = document.getElementById('referralLink').value;
+                window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(link));
+            });
+            
+            document.getElementById('messengerShare').addEventListener('click', function() {
+                const link = document.getElementById('referralLink').value;
+                window.open('fb-messenger://share/?link=' + encodeURIComponent(link));
+            });
+            
+            // Claim button
+            document.getElementById('claimButton').addEventListener('click', function() {
+                // In a real implementation, redirect to CPA offer
+                window.location.href = 'https://example.com/cpa-offer';
+            });
+            
+            // Check if coming from a referral
+            const urlParams = new URLSearchParams(window.location.search);
+            const ref = urlParams.get('ref');
+            
+            if (ref) {
+                // In a real implementation, track this referral in your database
+                console.log('Referral from:', ref);
+                
+                // Show a popup ad for referrals
+                setTimeout(function() {
+                    // This would be your actual ad code
+                    const popup = window.open('https://example.com/ad-popup', '_blank', 'width=600,height=400');
+                    if (popup) {
+                        popup.focus();
+                    } else {
+                        // If popup blocked, redirect
+                        window.location.href = 'https://example.com/ad-popup';
+                    }
+                }, 2000);
+            }
+        });
+        
+        // Helper function to generate a referral code
+        function generateReferralCode() {
+            return Math.random().toString(36).substring(2, 8) + Math.random().toString(36).substring(2, 8);
+        }
+        
+        // Update progress bar
+        function updateProgress(count) {
+            const progress = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            
+            // Simulate random progress for demo
+            // In a real app, you would get this from your database
+            const simulatedCount = Math.min(count + Math.floor(Math.random() * 5), 20);
+            const percentage = (simulatedCount / 20) * 100;
+            
+            progress.style.width = percentage + '%';
+            progressText.textContent = simulatedCount + '/20 friends joined';
+            
+            // If reached 20, show claim section
+            if (simulatedCount >= 20) {
+                setTimeout(function() {
+                    document.getElementById('referralSection').style.display = 'none';
+                    document.getElementById('claimSection').style.display = 'block';
+                    
+                    // Show confetti
+                    confetti({
+                        particleCount: 150,
+                        spread: 70,
+                        origin: { y: 0.6 }
+                    });
+                }, 1000);
+            } else {
+                // Simulate progress over time
+                setTimeout(function() {
+                    updateProgress(simulatedCount);
+                }, 3000);
+            }
+        }
+    </script>
+    
+    <!-- Ad Network Scripts (example) -->
+    <script>
+        // Replace these with your actual ad network codes
+        // Example for Adsterra:
+        // var adsterra = document.createElement('script');
+        // adsterra.src = 'https://www.profitableredirect.com/1234567890';
+        // document.head.appendChild(adsterra);
+        
+        // Example for PopAds:
+        // var popads = document.createElement('script');
+        // popads.src = 'https://popads.net/1234567890';
+        // document.head.appendChild(popads);
+    </script>
 </body>
 </html>
