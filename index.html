@@ -1,258 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get FREE MrBeast Feastibles Chocolate Box!</title>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f8f8f8;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        
-.container {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  padding: 1rem;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Love Letter</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
 
-.header-banner {
-  text-align: center;
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-radius: 10px;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-.header-banner img {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-}
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
 
-.header-banner p {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  color: #333;
-}
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      animation: fadeInDown 2s ease;
+    }
 
-.cta-button {
-  background-color: #ff7f50;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin: 20px 0;
+      animation: fadeIn 3s ease;
+    }
 
-.cta-button:hover {
-  background-color: #ff5c2d;
-}
+    .photo {
+      margin: 30px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 5px solid rgba(255,255,255,0.7);
+      animation: pulse 3s infinite;
+    }
 
-        
-        /* Header Banner */
-        .header-banner {
-            background: linear-gradient(135deg, #ff5e00, #ff1c1c);
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(255, 30, 30, 0.3);
-        }
-        
-        .header-banner h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .header-banner p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .cta-button {
-            background-color: #fff;
-            color: #ff1c1c;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Email Form Section */
-        .email-section {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .email-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff1c1c;
-        }
-        
-        .email-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .email-input {
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        /* Referral Section */
-        .referral-section {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-        
-        .progress-container {
-            margin: 20px 0;
-        }
-        
-        .progress-bar {
-            height: 30px;
-            background-color: #e0e0e0;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        
-        .progress {
-            height: 100%;
-            background: linear-gradient(90deg, #ff5e00, #ff1c1c);
-            width: 0%;
-            transition: width 0.5s;
-        }
-        
-        .progress-text {
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        .referral-link {
-            display: flex;
-            margin: 20px 0;
-        }
-        
-        .referral-link input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px 0 0 5px;
-        }
-        
-        .copy-button {
-            padding: 10px 15px;
-            background-color: #ff1c1c;
-            color: white;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
-        
-        .share-button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .whatsapp {
-            background-color: #25D366;
-        }
-        
-        .facebook {
-            background-color: #4267B2;
-        }
-        
-        .messenger {
-            background-color: #006AFF;
-        }
-        
-        /* Claim Section */
-        .claim-section {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: none;
-        }
-        
-        .claim-section h2 {
-            color: #ff1c1c;
-            margin-bottom: 20px;
-        }
-        
-        /* Comments Section */
-        .comments-section {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .comments-section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff1c1c;
-        }
-        
-        .comment {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .signature {
+      margin-top: 40px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2em;
+      animation: fadeInUp 3s ease;
+    }
+
+    /* Floating hearts */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -10px;
+      color: rgba(255,255,255,0.7);
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+
+  <div class="container">
+    <h1>My Dearest Love</h1>
+
+    <div class="photo">
+      <img src="https://i.ibb.co.com/Rp0ZWsCm/Screenshot-20250819-210051-5.png" alt="Her Picture">
+    </div>
+
+    <p>
+      From the moment our souls intertwined, I knew my world had found its missing melody.  
+      You are the sunrise that paints my mornings with warmth, the gentle breeze that calms my restless nights.  
+      Every beat of my heart carries your name, every thought of mine dances around your smile.  
+    </p>
+
+    <p>
+      In your eyes, I see endless galaxies, in your voice, I hear the poetry of eternity.  
+      You are not just the love of my life — you are the life in my love.  
+      With you, forever feels too short, and every moment becomes a treasure I hold close.  
+    </p>
+
+    <p>
+      My love, I promise to cherish you in silence and in laughter,  
+      to stand beside you through storms and sunshine,  
+      to be yours not just in this lifetime, but in all the lifetimes that follow.  
+    </p>
+
+    <div class="signature">Forever Yours ❤️</div>
+  </div>
+
+  <script>
+    const heartsContainer = document.querySelector('.hearts');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 3) + 's';
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>            margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid #eee;
         }
